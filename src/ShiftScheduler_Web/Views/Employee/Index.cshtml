@@ -1,0 +1,39 @@
+﻿@model IEnumerable<ShiftScheduler_Web.Helper.EmployeeScheduleModel>
+
+@{ 
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<strong>Employee Current Schedule</strong>  
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+              Employee Name
+            </th>
+            <th>
+               Schedule Date
+            </th>
+            <th>
+                Shift
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Emp_Name
+                </td>
+                <td>
+                    @item.Schedule_Date.ToString("dd/MM/yyyy")
+                </td>
+                <td>
+                    @item.Shift_Id
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
